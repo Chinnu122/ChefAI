@@ -335,7 +335,7 @@ const recipeDatabase = {
 const dietaryAdjustments = {
     vegetarian: "Replace meat with tofu, tempeh, or extra vegetables",
     vegan: "Use plant-based alternatives for all dairy and eggs",
-    "gluten-free": "Use gluten-free pasta, bread, or grain alternatives",
+    glutenfree: "Use gluten-free pasta, bread, or grain alternatives",
     keto: "Reduce carbs and increase healthy fats and proteins",
     paleo: "Use whole, unprocessed ingredients and avoid grains and dairy"
 };
@@ -447,7 +447,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Add some interactivity to featured recipe cards
 document.querySelectorAll('.recipe-preview-card').forEach(card => {
     card.addEventListener('click', function() {
-        alert('Full recipe feature coming soon! Use the Recipe Generator above to get started.');
+        // Scroll to recipe generator section
+        document.querySelector('#generator').scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
     });
 });
 
