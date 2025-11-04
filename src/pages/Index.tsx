@@ -60,11 +60,12 @@ const Index = () => {
 
       setRecipe(data);
       toast.success("Recipe generated!");
-    } catch (error: any) {
+    } catch (error) {
       console.error('Error generating recipe:', error);
-      if (error.message?.includes("429")) {
+      const errorMessage = error instanceof Error ? error.message : String(error);
+      if (errorMessage.includes("429")) {
         toast.error("Rate limit exceeded. Please try again later.");
-      } else if (error.message?.includes("402")) {
+      } else if (errorMessage.includes("402")) {
         toast.error("AI credits depleted. Please add more credits.");
       } else {
         toast.error("Failed to generate recipe. Please try again.");
@@ -83,7 +84,6 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       {/* Header */}
       <header className="border-b border-border">
-    <meta name=\"description\" content=\"TasteCraft AI — Michelin-Level AI Cooking Assistant: luxury AI cooking, nutrition insight, and chef-grade recipes.\" />
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <h2 className="text-xl font-semibold">Recipe Finder</h2>
           <div className="flex items-center gap-2">
