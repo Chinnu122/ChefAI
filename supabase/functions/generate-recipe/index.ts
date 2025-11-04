@@ -12,9 +12,9 @@ serve(async (req) => {
 
   try {
     const { ingredients } = await req.json();
-    const TASTECRAFT_AI_API_KEY = Deno.env.get("TASTECRAFT_AI_API_KEY");
+    const tastecraftAiApiKey = Deno.env.get("TASTECRAFT_AI_API_KEY");
 
-    if (!TASTECRAFT_AI_API_KEY) {
+    if (!tastecraftAiApiKey) {
       throw new Error("TASTECRAFT_AI_API_KEY is not configured");
     }
 
@@ -23,7 +23,7 @@ serve(async (req) => {
     const response = await fetch("https://ai.gateway.tastecraft-ai.dev/v1/chat/completions", {
       method: "POST",
       headers: {
-        Authorization: `Bearer ${TASTECRAFT_AI_API_KEY}`,
+        Authorization: `Bearer ${tastecraftAiApiKey}`,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
