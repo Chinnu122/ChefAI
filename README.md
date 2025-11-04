@@ -14,6 +14,8 @@ Welcome to **ChefAI**, your intelligent cooking companion that helps you discove
 
 View the live project here: [ChefAI Live Demo](https://chinnu122.github.io/ChefAI/)
 
+> **Note**: If the link doesn't work yet, GitHub Pages needs to be enabled. See [DEPLOYMENT.md](DEPLOYMENT.md) for instructions.
+
 ## 📋 How to Use
 
 1. **Visit the Website**: Open [https://chinnu122.github.io/ChefAI/](https://chinnu122.github.io/ChefAI/) in your browser
