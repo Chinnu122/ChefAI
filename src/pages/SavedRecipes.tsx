@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { RecipeCard } from "@/components/RecipeCard";
@@ -23,19 +23,7 @@ export default function SavedRecipes() {
   const [recipes, setRecipes] = useState<SavedRecipe[]>([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    checkAuth();
-    fetchRecipes();
-  }, []);
-
-  const checkAuth = async () => {
-    const { data: { session } } = await supabase.auth.getSession();
-    if (!session) {
-      navigate("/auth");
-    }
-  };
-
-  const fetchRecipes = async () => {
+  const fetchRecipes = useCallback(async () => {
     try {
       const { data, error } = await supabase
         .from('recipes')
@@ -55,7 +43,19 @@ export default function SavedRecipes() {
     } finally {
       setLoading(false);
     }
-  };
+  }, []);
+
+  const checkAuth = useCallback(async () => {
+    const { data: { session } } = await supabase.auth.getSession();
+    if (!session) {
+      navigate("/auth");
+    }
+  }, [navigate]);
+
+  useEffect(() => {
+    checkAuth();
+    fetchRecipes();
+  }, [checkAuth, fetchRecipes]);
 
   const handleFavoriteToggle = async (recipeId: string, currentFavorite: boolean) => {
     try {
