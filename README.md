@@ -1,73 +1,223 @@
-# Welcome to your TasteCraft AI project
+# 🍳 ChefAI - TasteCraft AI Recipe Generator
 
-## Project info
+**Smarter Cooking Starts Here** - An AI-powered recipe generator that transforms your ingredients into delicious, gourmet-grade meals personalized for your taste and wellness goals.
 
-**URL**: https://tastecraft-ai.dev/projects/36f0215b-0efd-4a21-a3b7-bd2263cbd369
+![ChefAI Demo](https://github.com/user-attachments/assets/d3265145-7f93-4f65-a7ed-34778e52dd03)
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## ✨ Features
 
-**Use TasteCraft AI**
+- 🤖 **AI-Powered Recipe Generation** - Create unique recipes based on your available ingredients
+- 📝 **Smart Ingredient Input** - Easy-to-use interface for adding ingredients
+- 💾 **Save Your Favorites** - Keep track of recipes you love
+- 🔐 **User Authentication** - Secure login with Supabase Auth
+- 📱 **Responsive Design** - Beautiful UI that works on all devices
+- ⚡ **Fast & Modern** - Built with React, TypeScript, and Vite
+- 🎨 **Professional UI** - Crafted with shadcn/ui and Tailwind CSS
 
-Simply visit the [TasteCraft AI Project](https://tastecraft-ai.dev/projects/36f0215b-0efd-4a21-a3b7-bd2263cbd369) and start prompting.
+---
 
-Changes made via TasteCraft AI will be committed automatically to this repo.
+## 🚀 Quick Start
 
-**Use your preferred IDE**
+### Prerequisites
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in TasteCraft AI.
+Before you begin, ensure you have the following installed:
+- **Node.js** (v18 or higher) - [Download here](https://nodejs.org/)
+- **npm** (comes with Node.js) or **yarn**
+- **Git** - [Download here](https://git-scm.com/)
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Installation
 
-Follow these steps:
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Chinnu122/ChefAI.git
+   cd ChefAI
+   ```
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+3. **Set up environment variables**
+   
+   Create a `.env.local` file in the root directory:
+   ```env
+   VITE_SUPABASE_URL=your_supabase_project_url
+   VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+   ```
 
-# Step 3: Install the necessary dependencies.
-npm i
+   > **Note:** Get your Supabase credentials from [supabase.com](https://supabase.com) after creating a project.
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+4. **Start the development server**
+   ```bash
+   npm run dev
+   ```
+
+5. **Open your browser**
+   
+   Navigate to `http://localhost:8080` to see the application running!
+
+---
+
+## 📦 Available Scripts
+
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start development server at `http://localhost:8080` |
+| `npm run build` | Build the app for production to `dist/` folder |
+| `npm run preview` | Preview the production build locally |
+| `npm run lint` | Run ESLint to check code quality |
+
+---
+
+## 🛠️ Tech Stack
+
+This project is built with modern web technologies:
+
+- **[React 18](https://react.dev/)** - UI library for building interactive interfaces
+- **[TypeScript](https://www.typescriptlang.org/)** - Type-safe JavaScript
+- **[Vite](https://vitejs.dev/)** - Lightning-fast build tool
+- **[Tailwind CSS](https://tailwindcss.com/)** - Utility-first CSS framework
+- **[shadcn/ui](https://ui.shadcn.com/)** - Beautiful, accessible component library
+- **[Supabase](https://supabase.com/)** - Backend-as-a-Service (authentication & database)
+- **[React Router](https://reactrouter.com/)** - Client-side routing
+- **[TanStack Query](https://tanstack.com/query)** - Powerful data synchronization
+- **[Lucide React](https://lucide.dev/)** - Beautiful icon library
+
+---
+
+## 📁 Project Structure
+
+```
+ChefAI/
+├── src/
+│   ├── components/       # Reusable UI components
+│   │   ├── ui/          # shadcn/ui components
+│   │   ├── Hero.tsx     # Landing page hero section
+│   │   ├── IngredientInput.tsx
+│   │   └── RecipeCard.tsx
+│   ├── pages/           # Application pages
+│   │   ├── Index.tsx    # Home page
+│   │   ├── Auth.tsx     # Authentication page
+│   │   ├── SavedRecipes.tsx
+│   │   └── NotFound.tsx
+│   ├── integrations/    # Third-party integrations
+│   │   └── supabase/    # Supabase client & types
+│   ├── hooks/           # Custom React hooks
+│   ├── lib/             # Utility functions
+│   ├── App.tsx          # Main app component
+│   └── main.tsx         # Application entry point
+├── public/              # Static assets
+├── supabase/            # Supabase functions
+│   └── functions/       # Edge functions
+│       └── generate-recipe/
+└── package.json         # Dependencies and scripts
 ```
 
-**Edit a file directly in GitHub**
+---
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 🎯 How It Works
 
-**Use GitHub Codespaces**
+1. **Add Ingredients** - Enter the ingredients you have available
+2. **Generate Recipe** - Click the "Generate Recipe" button
+3. **AI Magic** - Our AI analyzes your ingredients and creates a custom recipe
+4. **Cook & Enjoy** - Follow the step-by-step instructions
+5. **Save Favorites** - Bookmark recipes you love for easy access
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+---
 
-## What technologies are used for this project?
+## 🔧 Configuration
 
-This project is built with:
+### Supabase Setup
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+1. Create a new project on [Supabase](https://supabase.com)
+2. Set up the database schema:
+   - Create a `recipes` table with columns for title, ingredients, instructions, etc.
+3. Deploy the Edge Function in `supabase/functions/generate-recipe/`
+4. Add your API keys to environment variables
 
-## How can I deploy this project?
+### Tailwind Configuration
 
-Simply open [TasteCraft AI](https://tastecraft-ai.dev/projects/36f0215b-0efd-4a21-a3b7-bd2263cbd369) and click on Share -> Publish.
+The project uses a custom Tailwind configuration with:
+- Custom color palette (defined in CSS variables)
+- Responsive breakpoints
+- Custom animations
+- Dark mode support (class-based)
 
-## Can I connect a custom domain to my TasteCraft AI project?
+---
 
-Yes, you can!
+## 🤝 Contributing
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+Contributions are welcome! Here's how you can help:
 
-Read more here: [Setting up a custom domain](https://docs.tastecraft-ai.dev/features/custom-domain#custom-domain)
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+### Development Guidelines
+
+- Follow the existing code style
+- Write meaningful commit messages
+- Test your changes thoroughly
+- Update documentation as needed
+
+---
+
+## 🐛 Troubleshooting
+
+### Common Issues
+
+**Port 8080 is already in use**
+```bash
+# Kill the process using port 8080
+lsof -ti:8080 | xargs kill -9
+```
+
+**Supabase connection errors**
+- Verify your `.env.local` file has correct credentials
+- Check your Supabase project is active
+- Ensure Row Level Security policies are configured
+
+**Build errors**
+```bash
+# Clear cache and reinstall dependencies
+rm -rf node_modules package-lock.json
+npm install
+```
+
+---
+
+## 📄 License
+
+This project is available for personal and educational use.
+
+---
+
+## 👏 Acknowledgments
+
+- Recipe generation powered by AI via TasteCraft AI Gateway
+- UI components from [shadcn/ui](https://ui.shadcn.com/)
+- Icons from [Lucide](https://lucide.dev/)
+- Built with ❤️ using [Vite](https://vitejs.dev/)
+
+---
+
+## 📧 Contact & Support
+
+If you have questions or need help:
+- Open an [issue](https://github.com/Chinnu122/ChefAI/issues)
+- Check existing [discussions](https://github.com/Chinnu122/ChefAI/discussions)
+
+---
+
+<div align="center">
+
+**Happy Cooking! 🍽️**
+
+Made with 💚 by the ChefAI Team
+
+</div>
