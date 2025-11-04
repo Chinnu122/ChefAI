@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ChefAI - Your AI-powered cooking assistant for personalized recipes and cooking inspiration">
+    <title>ChefAI - AI-Powered Recipe Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <h1>🍳 ChefAI</h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#generator">Recipe Generator</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h2 class="hero-title">Welcome to ChefAI</h2>
+                    <p class="hero-subtitle">Your AI-Powered Cooking Assistant</p>
+                    <p class="hero-description">
+                        Discover personalized recipes, get cooking tips, and explore culinary creativity 
+                        with our intelligent recipe generator.
+                    </p>
+                    <a href="#generator" class="cta-button">Start Cooking</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recipe Generator Section -->
+        <section id="generator" class="generator-section">
+            <div class="container">
+                <h2 class="section-title">Recipe Generator</h2>
+                <div class="generator-container">
+                    <div class="input-section">
+                        <h3>Tell us what you're craving</h3>
+                        <form id="recipe-form">
+                            <div class="form-group">
+                                <label for="cuisine">Cuisine Type</label>
+                                <select id="cuisine" name="cuisine">
+                                    <option value="italian">Italian</option>
+                                    <option value="mexican">Mexican</option>
+                                    <option value="chinese">Chinese</option>
+                                    <option value="indian">Indian</option>
+                                    <option value="japanese">Japanese</option>
+                                    <option value="mediterranean">Mediterranean</option>
+                                    <option value="american">American</option>
+                                    <option value="thai">Thai</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="meal-type">Meal Type</label>
+                                <select id="meal-type" name="meal-type">
+                                    <option value="breakfast">Breakfast</option>
+                                    <option value="lunch">Lunch</option>
+                                    <option value="dinner">Dinner</option>
+                                    <option value="snack">Snack</option>
+                                    <option value="dessert">Dessert</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="dietary">Dietary Preferences</label>
+                                <select id="dietary" name="dietary">
+                                    <option value="none">None</option>
+                                    <option value="vegetarian">Vegetarian</option>
+                                    <option value="vegan">Vegan</option>
+                                    <option value="glutenfree">Gluten-Free</option>
+                                    <option value="keto">Keto</option>
+                                    <option value="paleo">Paleo</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="ingredients">Available Ingredients (optional)</label>
+                                <input type="text" id="ingredients" name="ingredients" 
+                                       placeholder="e.g., chicken, tomatoes, pasta">
+                            </div>
+
+                            <button type="submit" class="generate-button">Generate Recipe</button>
+                        </form>
+                    </div>
+
+                    <div class="output-section">
+                        <div id="recipe-output" class="recipe-card">
+                            <div class="placeholder">
+                                <p>🍽️ Your personalized recipe will appear here</p>
+                                <p class="placeholder-subtitle">Fill out the form and click "Generate Recipe"</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Recipes Section -->
+        <section id="featured" class="featured-section">
+            <div class="container">
+                <h2 class="section-title">Featured Recipes</h2>
+                <div class="recipe-grid">
+                    <div class="recipe-preview-card">
+                        <div class="recipe-image">🍝</div>
+                        <h3>Classic Spaghetti Carbonara</h3>
+                        <p>A creamy Italian pasta dish with pancetta and parmesan</p>
+                        <span class="recipe-time">⏱️ 25 min</span>
+                    </div>
+                    <div class="recipe-preview-card">
+                        <div class="recipe-image">🥗</div>
+                        <h3>Mediterranean Quinoa Bowl</h3>
+                        <p>Healthy and colorful bowl with fresh vegetables</p>
+                        <span class="recipe-time">⏱️ 20 min</span>
+                    </div>
+                    <div class="recipe-preview-card">
+                        <div class="recipe-image">🍛</div>
+                        <h3>Thai Green Curry</h3>
+                        <p>Aromatic curry with coconut milk and vegetables</p>
+                        <span class="recipe-time">⏱️ 35 min</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <h2 class="section-title">About ChefAI</h2>
+                <div class="about-content">
+                    <p>
+                        ChefAI is your intelligent cooking companion, designed to inspire and guide you 
+                        through your culinary journey. Whether you're a beginner or an experienced cook, 
+                        our AI-powered recipe generator helps you create delicious meals tailored to your 
+                        preferences and available ingredients.
+                    </p>
+                    <div class="features">
+                        <div class="feature-item">
+                            <div class="feature-icon">🎯</div>
+                            <h3>Personalized</h3>
+                            <p>Recipes tailored to your taste and dietary needs</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">⚡</div>
+                            <h3>Quick & Easy</h3>
+                            <p>Find recipes that fit your schedule</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">🌱</div>
+                            <h3>Diverse Options</h3>
+                            <p>Explore cuisines from around the world</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 ChefAI. Your AI-Powered Cooking Assistant.</p>
+            <p>Built with ❤️ for food lovers everywhere</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
