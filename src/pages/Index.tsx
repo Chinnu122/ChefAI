@@ -83,7 +83,6 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       {/* Header */}
       <header className="border-b border-border">
-    <meta name=\"description\" content=\"TasteCraft AI — Michelin-Level AI Cooking Assistant: luxury AI cooking, nutrition insight, and chef-grade recipes.\" />
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <h2 className="text-xl font-semibold">Recipe Finder</h2>
           <div className="flex items-center gap-2">

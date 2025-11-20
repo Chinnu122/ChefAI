@@ -12,22 +12,27 @@ serve(async (req) => {
 
   try {
     const { ingredients } = await req.json();
-    const TASTECRAFT AI_API_KEY = Deno.env.get("TASTECRAFT AI_API_KEY");
 
-    if (!TASTECRAFT AI_API_KEY) {
-      throw new Error("TASTECRAFT AI_API_KEY is not configured");
+    // Support both standard OpenAI key and the custom platform key
+    const apiKey = Deno.env.get("OPENAI_API_KEY") || Deno.env.get("TASTECRAFT_AI_API_KEY");
+    const apiUrl = Deno.env.get("OPENAI_API_KEY")
+      ? "https://api.openai.com/v1/chat/completions"
+      : "https://ai.gateway.tastecraft-ai.dev/v1/chat/completions";
+
+    if (!apiKey) {
+      throw new Error("API key not configured (OPENAI_API_KEY or TASTECRAFT_AI_API_KEY)");
     }
 
     console.log('Generating recipe for ingredients:', ingredients);
 
-    const response = await fetch("https://ai.gateway.tastecraft-ai.dev/v1/chat/completions", {
+    const response = await fetch(apiUrl, {
       method: "POST",
       headers: {
-        Authorization: `Bearer ${TASTECRAFT AI_API_KEY}`,
+        Authorization: `Bearer ${apiKey}`,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        model: "google/gemini-2.5-flash",
+        model: "gpt-4o-mini", // Use a standard model that is likely supported by both
         messages: [
           {
             role: "system",
@@ -60,7 +65,7 @@ Be creative but practical. Use common cooking techniques. Make the recipe clear 
         });
       }
       if (response.status === 402) {
-        return new Response(JSON.stringify({ error: "Payment required, please add funds to your TasteCraft AI AI workspace." }), {
+        return new Response(JSON.stringify({ error: "Payment required, please add funds to your workspace." }), {
           status: 402,
           headers: { ...corsHeaders, "Content-Type": "application/json" },
         });
